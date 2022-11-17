@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Practica1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form  action="/">
+    <input id="number" name="number1" type="text">
+    <select id="sign" name="sign" >
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+    </select>
+    <input id="number2" name="number2" type="text">
+    <input formmethod="get" type="submit" value="Get">
+    <input formmethod="post" type="submit" value="Post">
+    <p th:text="'Результат:' + ${result} + '!'" />
+</form>
+</body>
+</html>
