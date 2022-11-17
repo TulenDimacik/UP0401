@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
     @GetMapping("/")
-    public String CalcutorGet(@RequestParam(value="number1",required = false)float number1,
-                                @RequestParam(value = "number2",required = false)float number2,
-                                @RequestParam(value = "sign",required = false)String sign,
+    public String CalcutorGet(@RequestParam(value="number1",required = false, defaultValue = "0") float number1,
+                                @RequestParam(value = "number2",required = false, defaultValue = "0")float number2,
+                                @RequestParam(value = "sign",required = false, defaultValue = "+")String sign,
                                 Model model){
         model.addAttribute("result",Mathematica(number1,number2,sign));
         return "home";
     }
     @PostMapping("/")
-    public String CalcutorPost(@RequestParam(value="number1",required = false)float number1,
-                                @RequestParam(value = "number2",required = false)float number2,
-                                @RequestParam(value = "sign",required = false)String sign,
+    public String CalcutorPost(@RequestParam(value="number1",required = false, defaultValue = "0")float number1,
+                                @RequestParam(value = "number2",required = false, defaultValue = "0")float number2,
+                                @RequestParam(value = "sign",required = false, defaultValue = "+")String sign,
                                 Model model){
         model.addAttribute("result",Mathematica(number1,number2,sign));
         return "home";
